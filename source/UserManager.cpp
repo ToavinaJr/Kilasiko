@@ -221,6 +221,11 @@ bool UserManager::authenticateUser(const std::string& email, const std::string& 
 /************************ */
 
 void UserManager::displayUserTable() {
+    if (users.size() == 0) {
+        std::cout << "<p style='color: white;'>La liste des utilisateur est vide</p>";
+        return;
+    }
+
     std::cout << "<table border='1'>\n";
     std::cout << "<thead>\n<tr style='background:#d69002;'>\n<th>ID</th>\n<th>Nom</th>\n<th>Email</th>\n<th>Date de Naissance</th>\n<th>Actions</th>\n</tr>\n</thead>\n<tbody>\n";
 

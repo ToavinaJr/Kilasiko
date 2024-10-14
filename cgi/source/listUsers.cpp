@@ -7,10 +7,10 @@
 #include <memory>
 
 int main() {
-    auto userManager =  std::make_unique<UserManager>("./users.txt");
-    auto renderer = std::make_unique<Renderer>("Inscrivez vous", "style.css");
-    auto loadingData = userManager->loadUsers();
-    auto handler = std::make_unique<Handler>();
+    auto userManager    =   std::make_unique<UserManager>("./users.txt");
+    auto renderer       =   std::make_unique<Renderer>("Inscrivez vous", "style.css");
+    auto loadingData    =   userManager->loadUsers();
+    auto handler        =   std::make_unique<Handler>();
 
     std::map<std::string, std::string> data;
 
@@ -67,7 +67,6 @@ int main() {
             userManager->removeUser(id);
         }
     }
-
     catch(const std::exception& e) {
         std::cerr << "Action non trouvée " << e.what();
     }
